@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SN Global Study & Migration</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+      /* Custom CSS Styles for Beautiful Design */
+:root {
+  --primary-color: #dc3545;
+  --secondary-color: #ecf0f1;
+  --accent-color: #3498db;
+  --text-light: #7f8c8d;
+  --text-dark: #2c3e50;
+  --white: #ffffff;
+  --dark: #000,
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.serif-font {
+  font-family: "Playfair Display", serif;
+}
+
+/* Header Styles */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color) !important;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.cover{
+    background-image: url(image/cover.jpeg);
+    max-height: 900px;
+}
+.hero-section {
+ background-color: #6b161671;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.8s forwards;
+}
+
+
+.search{
+     background: transparent;
+  color: var(--white);
+  padding: 5px 15px;
+  border: 1px solid var(--white);
+  margin-top:5px ;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  font-size: 16px;
+  animation: fadeInUp 1s ease 1.1s forwards;
+  max-height: 80px;
+}
+.search:hover{
+background: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.hero-btn:hover {
+  color: var(--primary-color);
+}
+
+/* Floating Tours with Flexbox */
+.floating-tours-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -50px;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.floating-tours-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tour-title {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.tour-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tour-label {
+    color: #7f8c8d;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.tour-value {
+    color: #2c3e50;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tour-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.tour-button:hover {
+    background: #c82333;
+}
+/* Services Section */
+.services-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  padding: 20px ;
+  border-radius: 15px 0 15px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+.service-card img {
+  max-width: 320px;
+  border-radius: 10px ;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+.service-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+/* About Section */
+.about-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.about-image {
+  width: 100%;
+  height: 400px;
+  background: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80")
+    center/cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+}
+
+.about-content p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Statistics Section */
+.stats-section {
+  padding: 80px 0;
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.stat-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: url("https://randomuser.me/api/portraits/women/44.jpg")
+    center/cover;
+  margin: 0 auto 20px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.contact-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 15px 40px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.contact-btn:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  padding: 50px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.contact-details h5 {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.contact-details p {
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Footer Section */
+.footer-section {
+  background: var(--text-dark);
+  color: var(--white);
+  padding: 60px 0 30px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.footer-logo h4 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-links h6 {
+  color: var(--white);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--accent-color);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+  margin-top: 30px;
+  text-align: center;
+  color: #bdc3c7;
+}
+
+/* Section Titles */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--text-dark);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 5px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  .contact-info {
+    padding: 30px 0;
+  }
+
+  .hero-btn {
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    padding: 30px 20px;
+  }
+
+  .contact-form {
+    padding: 25px 15px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <!-- Brand/Logo -->
+      <a class="navbar-brand" href="#home">
+        <img src="./image/SN_logo-removebg-preview.png" alt="SN Global Logo" class="logo-img">
+        SN Global Study & Migration
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="cover">
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h1>Your Global Education Partner</h1>
+        <p>Study abroad dreams made reality with expert guidance and comprehensive support</p>
+
+        <button class="search"> Search here</button>
+      </div>
+    </section>
+  </section>
+  <!-- Add this right after the hero section closing tag -->
+  <div class="floating-tours-container">
+    <div class="floating-tours-card">
+      <h4 class="tour-title">Upcoming Tours</h4>
+
+      <div class="tour-detail">
+        <span class="tour-label">Starting date</span>
+        <span class="tour-value">14/04/2022</span>
+      </div>
+
+      <div class="tour-detail">
+        <span class="tour-label">End date</span>
+        <span class="tour-value">14/04/2022</span>
+      </div>
+
+      <div class="tour-detail">
+        <span class="tour-label">Location</span>
+        <span class="tour-value">Kandy</span>
+      </div>
+
+      <button class="tour-button">Check Now</button>
+    </div>
+  </div>
+  <!-- Services Section -->
+ <!-- Popular Tours Section -->
+<section class="popular-tours-section" style="padding: 100px 0; background: #f8f9fa;">
+  <div class="container">
+    <h2 class="section-title fade-in">Popular Tours</h2>
+    <p class="text-center mb-5" style="color: var(--text-light);">Check out the Most Popular Tours offered by Travengo.</p>
+    
+    <div class="row">
+      <!-- Tour 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="tour-card fade-in" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="/updated website/image/5.jpg" 
+                 alt="Highlights of Spain" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 20px;">
+            <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 10px;">Highlights of UK</h5>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-plane"></i> Student Visa
+                <span class="mx-2">|</span> 15 days
+                <span class="mx-2">|</span> Scholarship
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600; color: var(--primary-color);">From 25,0000</span>
+              <button class="tour-button" style="background: var(--primary-color); color: white; border: none; border-radius: 4px; padding: 5px 15px; font-size: 0.9rem; transition: all 0.3s ease;">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tour 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="tour-card fade-in" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="/updated website/image/2.jpg" 
+                 alt="Best of South America" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 20px;">
+            <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 10px;">Best of South America</h5>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-plane"></i> By visa
+                <span class="mx-2">|</span> 14 days
+                <span class="mx-2">|</span> Group Tour
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600; color: var(--primary-color);">From 2,0000</span>
+              <button class="tour-button" style="background: var(--primary-color); color: white; border: none; border-radius: 4px; padding: 5px 15px; font-size: 0.9rem; transition: all 0.3s ease;">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tour 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="tour-card fade-in" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="./image/3.jpg" 
+                 alt="Best of Argentina" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 20px;">
+            <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 10px;">Best of Argentina</h5>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-plane"></i> By visa
+                <span class="mx-2">|</span> 10 days
+                <span class="mx-2">|</span> Group Tour
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600; color: var(--primary-color);">From 2,0000</span>
+              <button class="tour-button" style="background: var(--primary-color); color: white; border: none; border-radius: 4px; padding: 5px 15px; font-size: 0.9rem; transition: all 0.3s ease;">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tour 4 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="tour-card fade-in" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="/updated website/image/4.jpg" 
+                 alt="Eastern USA & Canada" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 20px;">
+            <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 10px;">Eastern CHINA</h5>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-plane"></i> By visa
+                <span class="mx-2">|</span> 10 days
+                <span class="mx-2">|</span> Group Tour
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600; color: var(--primary-color);">From 1,2000</span>
+              <button class="tour-button" style="background: var(--primary-color); color: white; border: none; border-radius: 4px; padding: 5px 15px; font-size: 0.9rem; transition: all 0.3s ease;">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tour 5 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="tour-card fade-in" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="/updated website/image/7.jpg" 
+                 alt="Scandinavian Escape" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 20px;">
+            <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 10px;">Scandinavian Escape</h5>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-plane"></i> By visa
+                <span class="mx-2">|</span> 12 days
+                <span class="mx-2">|</span> Group Tour
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600; color: var(--primary-color);">From 2,000</span>
+              <button class="tour-button" style="background: var(--primary-color); color: white; border: none; border-radius: 4px; padding: 5px 15px; font-size: 0.9rem; transition: all 0.3s ease;">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tour 6 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="tour-card fade-in" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="/website/image/2.jpg" 
+                 alt="Taste of Italy" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 20px;">
+            <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 10px;">Taste of Italy</h5>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-plane"></i> By visa 
+                <span class="mx-2">|</span> 6 days
+                <span class="mx-2">|</span> Group Tour
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600; color: var(--primary-color);">From 2,000</span>
+              <button class="tour-button" style="background: var(--primary-color); color: white; border: none; border-radius: 4px; padding: 5px 15px; font-size: 0.9rem; transition: all 0.3s ease;">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="about-image fade-in"></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-content fade-in">
+            <h2>About SN Global</h2>
+            <p>With years of experience in international education and migration services, SN Global Study & Migration
+              has successfully guided thousands of students and professionals toward their global aspirations.</p>
+
+            <p>Our team of certified consultants provides personalized guidance throughout your journey, from initial
+              consultation to successful visa approval and beyond. We understand that each client's needs are unique,
+              and we tailor our services accordingly.</p>
+
+            <p>Partner with us to turn your international dreams into reality. Our comprehensive approach ensures you're
+              well-prepared for every step of your global journey.</p>
+
+            <button class="hero-btn" style="background: var(--primary-color); color: white;"
+              onclick="scrollToSection('contact')">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="5000">0</span>
+            <span class="stat-label">Success Stories</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="25">0</span>
+            <span class="stat-label">Countries</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="98">0</span>
+            <span class="stat-label">Success Rate %</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="15">0</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title fade-in">What Our Clients Say</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-avatar"></div>
+            <p class="testimonial-text">"SN Global made my study abroad dream come true. Their guidance through the
+              entire process was exceptional and professional."</p>
+            <h6 class="testimonial-author">- Sarah Johnson</h6>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-avatar"
+              style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+            <p class="testimonial-text">"Thanks to SN Global, I successfully migrated to Canada. Their visa processing
+              service is outstanding and reliable."</p>
+            <h6 class="testimonial-author">- Michael Chen</h6>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-avatar"
+              style="background-image: url('https://randomuser.me/api/portraits/women/65.jpg')"></div>
+            <p class="testimonial-text">"Professional service and expert guidance. I highly recommend SN Global for
+              anyone planning to study abroad."</p>
+            <h6 class="testimonial-author">- Priya Sharma</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title fade-in">Contact Us</h2>
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-lg-8">
+          <div class="contact-form fade-in">
+            <form id="contactForm" method="POST" action="#" onsubmit="submitForm(event)">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="tel" class="form-control" placeholder="Phone Number" name="phone" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <select class="form-control" name="service" required>
+                    <option value="">Select Service</option>
+                    <option value="study-abroad">Study Abroad</option>
+                    <option value="visa-processing">Visa Processing</option>
+                    <option value="migration">Migration Services</option>
+                    <option value="language-training">Language Training</option>
+                    <option value="career-counseling">Career Counseling</option>
+                    <option value="documentation">Documentation</option>
+                   <option value="documentation">UK, china , Italy, Canada  Scholarship </option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Your Message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="contact-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-lg-4">
+          <div class="contact-info fade-in">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h5>Our Address</h5>
+                <p> Flat # D-9 (Lift-9), 14/1 (The Emporium Bhaban) Mirpur Road,<br> Shyamoli 1207 Dhaka, Bangladesh</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h5>Phone Numbers</h5>
+                <p>01786-940707</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h5>Email Address</h5>
+                <p>sngolbar@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h5>Business Hours</h5>
+                <p>Sat - Thu: 8:00 PM - 5:00 AM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="footer-logo">
+            <img src="/updated website/image/SN_logo-removebg-preview.png" alt="SN Global Logo">
+            <h4>SN Global Study & Migration</h4>
+          </div>
+          <p style="color: #bdc3c7; line-height: 1.6;">Your trusted partner for international education and migration
+            services. We make global dreams a reality with expert guidance and comprehensive support.</p>
+
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <div class="footer-links">
+            <h6>Quick Links</h6>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#testimonials">Reviews</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-links">
+            <h6>Our Services</h6>
+            <ul>
+              <li><a href="#">Study Abroad</a></li>
+              <li><a href="#">Visa Processing</a></li>
+              <li><a href="#">Migration Services</a></li>
+              <li><a href="#">Language Training</a></li>
+              <li><a href="#">Career Counseling</a></li>
+              <li><a href="#">UK Scholaship</a></li>
+              <li><a href="#">china Scholaship</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-links">
+            <h6>Contact Info</h6>
+            <ul>
+              <li><i class="fas fa-map-marker-alt me-2"></i> Flat # D-9 (Lift-9), 14/1 (The Emporium Bhaban) Mirpur Road, Shyamoli 1207 Dhaka, Bangladesh</li>
+              <li><i class="fas fa-phone me-2"></i> 01786-940707</li>
+              <li><i class="fas fa-envelope me-2"></i> sngolbar@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2023 SN Global Study & Migration. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Function to scroll to a section
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Function to handle form submission
+    function submitForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+
+      // Here you would typically send the form data to a server
+      // For demonstration, we'll just show an alert
+      alert('Thank you for your message! We will contact you soon.');
+      form.reset();
+    }
+
+    // Function to animate counting numbers
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stat-number');
+      const speed = 200; // The lower the faster
+
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(animateCounters, 1);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      });
+    }
+
+    // Function to handle scroll animations
+    function handleScrollAnimations() {
+      const elements = document.querySelectorAll('.fade-in');
+
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        if (elementPosition < screenPosition) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Initialize animations when page loads
+    document.addEventListener('DOMContentLoaded', function () {
+      // Start counter animation when stats section is visible
+      const statsSection = document.querySelector('.stats-section');
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+          observer.unobserve(statsSection);
+        }
+      });
+
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+
+      // Add scroll event listener for other animations
+      window.addEventListener('scroll', handleScrollAnimations);
+
+      // Run once on page load
+      handleScrollAnimations();
+    });
+  </script>
+</body>
+
+</html>
